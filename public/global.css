@@ -1,10 +1,17 @@
-@import url("reset.css");
-@import url("default.css");
+@import 'reset.css';
+@import 'default.css';
+
+/* 
+    --crusoe: #2b580c;
+    --oxley: #639a67;
+    --teagreen: #d8ebb5;
+    --straw: #d9bf77;
+    --black: #333333;
+*/
 
 html, body {
 	position: relative;
 	width: 100%;
-	height: 100%;
 }
 
 body {
@@ -13,4 +20,63 @@ body {
 	padding: 15px;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background-color: var(--teagreen);
+}
+
+a{
+	color: var(--crusoe);
+	text-decoration-line: unset;
+}
+
+a:hover{
+	text-decoration-line: overline;
+}
+
+.container{
+	max-width: 1200px;
+	padding: 100px 0;
+	margin: 0 auto;
+}
+
+.title{
+	font-size: 8em;
+}
+
+.expand{
+	width: 0;
+	overflow: hidden;
+	animation-name: leftToRight;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+	word-break: break-all;
+	height: 1em;
+}
+
+.expand.a{
+	animation-delay: 1s;
+}
+.expand.b{
+	animation-delay: 1.5s;
+}
+.expand.c{
+	animation-delay: 2s;
+}
+
+@keyframes leftToRight{
+	from{
+		width: 0%;
+		overflow: hidden;
+	}
+	90%{
+		width: 100%;
+		overflow: visible;
+	}
+	to{
+		width: fit-content;
+		overflow: visible;
+	}
+}
+
+.underline:hover{
+	text-decoration: underline;
 }
